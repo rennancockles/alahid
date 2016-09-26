@@ -1,0 +1,26 @@
+#! /bin/bash
+
+#######################################################################
+# Description: Script para transformar o Arduino Uno em interface HID #
+# Author: Rennan Cockles                                              #
+# Version: 1.0.0                                                      #
+#######################################################################
+
+echo "Conecte o ARDUINO UNO no PC com os dois pinos conectados e então remova o jumper."
+read
+echo "Resetando o ARDUINO para o firmware padrão..."
+dfu-programmer atmega16u2 erase
+dfu-programmer atmega16u2 flash --suppress-bootloader-mem firmwares/Arduino-atmega16u2-Uno-Rev3.hex
+dfu-programmer atmega16u2 reset
+echo "Desconecte o ARDUINO do pc e conecte novamente."
+read
+echo "Insira o código no ARDUINO pela IDE."
+read
+echo "Conecte os dois pinos para resetar o ARDUINO e então remova o jumper."
+read
+echo "Escrevendo o firmware de teclado."
+dfu-programmer atmega16u2 erase
+dfu-programmer atmega16u2 flash firmwares/Arduino-keyboard-0.3.hex
+dfu-programmer atmega16u2 reset
+echo "Pronto!"
+
