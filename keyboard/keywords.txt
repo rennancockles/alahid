@@ -1,0 +1,37 @@
+#######################################
+# Syntax Coloring Map For Keyboard
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Keyboard	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+PRESS	KEYWORD2
+DELAY	KEYWORD2
+ALT_F2	KEYWORD2
+ALT_F4	KEYWORD2
+CTRL_ALT	KEYWORD2
+CTRL_ALT_DEL	KEYWORD2
+CTRL_ALT_ARROW	KEYWORD2
+WINDOWS	KEYWORD2
+ENTER	KEYWORD2
+TAB	KEYWORD2
+PRINT	KEYWORD2
+STRING	KEYWORD2
+ALT_F2	KEYWORD2
+ALT_F2	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
