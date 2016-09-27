@@ -6,10 +6,10 @@
 #include <inttypes.h>
 
 #if ARDUINO >= 100
-#include "Arduino.h"       
+#include "Arduino.h"
 #else
-#include "WProgram.h"      
-#include "pins_arduino.h"  
+#include "WProgram.h"
+#include "pins_arduino.h"
 #endif
 
 #define KEY_LEFT_CTRL	0x01
@@ -54,8 +54,8 @@
 #define KEY_VOL_UP      0x80
 #define KEY_VOL_DOWN    0x81
 #define KEY_NONE        0x37
- 
- 
+
+
 class Keyboard
 {
    private:
@@ -66,6 +66,8 @@ class Keyboard
       void  PRESS(void);
       void  DELAY(unsigned t);
 
+      void  ALT(char *c);
+      void  ALT_SPACE(void);
       void  ALT_F2(void);
       void  ALT_F4(void);
 
@@ -78,8 +80,9 @@ class Keyboard
       void  ENTER(void);
       void  TAB(void);
       void  PRINT(void);
+      void  BACKSPACE(void);
 
       void  STRING(char *txt);
 };
- 
+
 #endif

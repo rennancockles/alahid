@@ -1,7 +1,7 @@
 #include "Keyboard.h"
 
 #if ARDUINO >= 100
-    #include "Arduino.h"   
+    #include "Arduino.h"
 #else
 extern "C" {
     #include "WConstants.h"
@@ -25,7 +25,19 @@ void Keyboard::DELAY(unsigned t){
 }
 
 
-// ALT + F#
+// ALT + *
+void Keyboard::ALT(char *c){
+    buf[0] = KEY_LEFT_ALT;
+    buf[2] = c[0] - 'a' + 4;
+    PRESS();
+}
+
+void Keyboard::ALT_SPACE(void){
+    buf[0] = KEY_LEFT_ALT;
+    buf[2] = KEY_SPC;
+    PRESS();
+}
+
 void Keyboard::ALT_F2(void){
     buf[0] = KEY_LEFT_ALT;
     buf[2] = KEY_F2;
@@ -78,7 +90,7 @@ void Keyboard::CTRL_ALT_ARROW(char *c){
 // WINDOWS + ""
 void Keyboard::WINDOWS(char *c){
     buf[0] = KEY_LEFT_GUI;
-    
+
     if(c[0] >= 'a' && c[0] <= 'z'){
         buf[2] = c[0] - 'a' + 4;
     }
@@ -102,6 +114,11 @@ void Keyboard::PRINT(void){
     PRESS();
 }
 
+void Keyboard::BACKSPACE(void){
+    buf[2] = KEY_BACKSPC;
+    PRESS();
+}
+
 // String
 void Keyboard::STRING(char *txt){
     while(*txt){
@@ -110,7 +127,7 @@ void Keyboard::STRING(char *txt){
         }
         else if(*txt >= 'A' && *txt <= 'Z'){
             buf[0] = KEY_LEFT_SHIFT;
-            
+
             buf[2] = *txt - 'A' + 4;
         }
         else if(*txt >= '0' && *txt <= '9'){
@@ -197,5 +214,3 @@ void Keyboard::STRING(char *txt){
         txt++;
     }
 }
- 
-
