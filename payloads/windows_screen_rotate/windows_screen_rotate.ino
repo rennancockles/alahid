@@ -1,3 +1,6 @@
+// Title: Windows screen rotate
+// Author: Rennan Cockles
+
 #include <Keyboard.h>
 
 Keyboard kb;
