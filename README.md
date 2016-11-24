@@ -1,1 +1,3 @@
-Hiduino
+ALAHID
+
+Arduino Like A HID
