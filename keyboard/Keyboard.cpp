@@ -141,6 +141,10 @@ void Keyboard::STRING(char *txt){
         else if(*txt == ' '){
             buf[2] = KEY_SPC;
         }
+        else if(*txt == '$'){
+            buf[0] = KEY_LEFT_SHIFT;
+            buf[2] = 0x21;
+        }
         else if(*txt == '&'){
             buf[0] = KEY_LEFT_SHIFT;
             buf[2] = 0x24;
@@ -162,7 +166,7 @@ void Keyboard::STRING(char *txt){
             buf[2] = 0x14;
         }
         else if(*txt == '\\'){
-            buf[2] = 0x34;
+            buf[2] = 0x64;
         }
         else if(*txt == ';'){
             buf[2] = 0x38;
@@ -206,6 +210,30 @@ void Keyboard::STRING(char *txt){
         }
         else if(*txt == ','){
             buf[2] = 0x36;
+        }
+        else if(*txt == '\''){
+            buf[2] = 0x35;
+        }
+        else if(*txt == '"'){
+            buf[0] = KEY_LEFT_SHIFT;
+            buf[2] = 0x35;
+        }
+        else if(*txt == '_'){
+            buf[0] = KEY_LEFT_SHIFT;
+            buf[2] = 0x2D;
+        }
+        else if(*txt == '-'){
+            buf[2] = 0x2D;
+        }
+        else if(*txt == ','){
+            buf[2] = 0x36;
+        }
+        else if(*txt == ';'){
+            buf[2] = 0x38;
+        }
+        else if(*txt == ':'){
+            buf[0] = KEY_LEFT_SHIFT;
+            buf[2] = 0x38;
         }
         else{
             buf[2] = KEY_NONE;
