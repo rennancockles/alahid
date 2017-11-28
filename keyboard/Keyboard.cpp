@@ -119,6 +119,26 @@ void Keyboard::BACKSPACE(void){
     PRESS();
 }
 
+void Keyboard::RIGHT_ARROW(void){
+    buf[2] = KEY_RIGHT_ARROW;
+    PRESS();
+}
+
+void Keyboard::LEFT_ARROW(void){
+    buf[2] = KEY_LEFT_ARROW;
+    PRESS();
+}
+
+void Keyboard::DOWN_ARROW(void){
+    buf[2] = KEY_DOWN_ARROW;
+    PRESS();
+}
+
+void Keyboard::UP_ARROW(void){
+    buf[2] = KEY_UP_ARROW;
+    PRESS();
+}
+
 // String
 void Keyboard::STRING(char *txt){
     while(*txt){
