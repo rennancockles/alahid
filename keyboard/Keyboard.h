@@ -81,6 +81,10 @@ class Keyboard
       void  TAB(void);
       void  PRINT(void);
       void  BACKSPACE(void);
+      void  RIGHT_ARROW(void);
+      void  LEFT_ARROW(void);
+      void  DOWN_ARROW(void);
+      void  UP_ARROW(void);
 
       void  STRING(char *txt);
 };
